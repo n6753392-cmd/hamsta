@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamsta Cafe — Fuel Your World. One Sip at a Time.</title>
+  <meta name="description" content="Welcome to Hamsta Cafe — a quirky, next-gen space-station cafe where adorable hamster mascots serve futuristic brews. Reserve your pod today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ═══════════ PARTICLE CANVAS ═══════════ -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ═══════════ NAVIGATION ═══════════ -->
+  <nav id="main-nav" class="navbar">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-icon">🐹</span>
+      <span class="logo-text">HAMSTA<span class="logo-accent">CAFE</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#menu" class="nav-link" data-text="Menu">Menu</a></li>
+      <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+      <li><a href="#gallery" class="nav-link" data-text="Gallery">Gallery</a></li>
+      <li><a href="#feedback" class="nav-link" data-text="Feedback">Feedback</a></li>
+    </ul>
+    <button id="nav-toggle" class="nav-hamburger" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════ MOBILE MENU ═══════════ -->
+  <div id="mobile-menu" class="mobile-menu">
+    <ul class="mobile-nav-links">
+      <li><a href="#menu" class="mobile-nav-link">Menu</a></li>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="#feedback" class="mobile-nav-link">Feedback</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════ HERO SECTION ═══════════ -->
+  <section id="hero" class="hero">
+    <!-- Cinematic light rays -->
+    <div class="hero-rays">
+      <div class="hero-ray hero-ray--1"></div>
+      <div class="hero-ray hero-ray--2"></div>
+      <div class="hero-ray hero-ray--3"></div>
+    </div>
+
+    <div class="hero-glow hero-glow--cyan" data-parallax="0.03"></div>
+    <div class="hero-glow hero-glow--pink" data-parallax="0.05"></div>
+    <div class="hero-glow hero-glow--amber" data-parallax="0.04"></div>
+
+    <!-- HUD corner brackets -->
+    <div class="hud-corner hud-corner--tl"></div>
+    <div class="hud-corner hud-corner--tr"></div>
+    <div class="hud-corner hud-corner--bl"></div>
+    <div class="hud-corner hud-corner--br"></div>
+
+    <!-- Floating HUD status line -->
+    <div class="hud-status">
+      <span class="hud-status__dot"></span>
+      <span class="hud-status__text">SYS: ONLINE</span>
+      <span class="hud-status__sep">|</span>
+      <span class="hud-status__text">STATION: HAMSTA-7</span>
+      <span class="hud-status__sep">|</span>
+      <span class="hud-status__text">BREW TEMP: 96.4°C</span>
+    </div>
+
+    <div class="hero-content" data-parallax="0.02">
+      <!-- Radial cinematic backdrop -->
+      <div class="hero-mascot-wrap" data-parallax="0.04">
+        <div class="mascot-backdrop"></div>
+        <div class="mascot-ring mascot-ring--outer"></div>
+        <div class="mascot-ring mascot-ring--mid"></div>
+        <div class="mascot-ring mascot-ring--inner"></div>
+        <img src="assets/hamsta-mascot.png" alt="Hamsta Cafe mascot — an adorable hamster astronaut holding a glowing coffee cup" class="hero-mascot" />
+      </div>
+
+      <h1 class="hero-tagline" data-parallax="0.015">
+        <span class="tagline-line tagline-line--1">Fuel Your World.</span>
+        <span class="tagline-line tagline-line--2">One Sip at a Time.</span>
+      </h1>
+      <p class="hero-subtitle">A hamster-run space station café — where cosmic brews meet cozy vibes.</p>
+
+      <div class="hero-cta-row">
+        <a href="#menu" class="btn-holo" id="hero-cta">
+          <span class="btn-holo__text">Explore the Menu</span>
+          <span class="btn-holo__glow"></span>
+        </a>
+        <a href="#feedback" class="btn-holo btn-holo--secondary" id="hero-cta-feedback">
+          <span class="btn-holo__text">Share Feedback</span>
+          <span class="btn-holo__glow"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-indicator__mouse">
+        <div class="scroll-indicator__wheel"></div>
+      </div>
+      <span>Scroll down</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ MENU SECTION ═══════════ -->
+  <section id="menu" class="section menu-section">
+    <div class="section-header">
+      <span class="section-tag">// TRANSMISSIONS</span>
+      <h2 class="section-title neon-text">Our Menu</h2>
+      <p class="section-desc">Interstellar flavors brewed in zero-gravity. Each sip is a journey through the cosmos.</p>
+    </div>
+
+    <div class="menu-categories">
+      <button class="menu-cat-btn active" data-category="all">All</button>
+      <button class="menu-cat-btn" data-category="drinks">Drinks</button>
+      <button class="menu-cat-btn" data-category="food">Food</button>
+      <button class="menu-cat-btn" data-category="specials">Specials</button>
+    </div>
+
+    <div class="menu-grid" id="menu-grid">
+      <!-- Drinks -->
+      <div class="menu-card" data-category="drinks">
+        <div class="menu-card__inner">
+          <div class="menu-card__front">
+            <div class="menu-card__icon">☕</div>
+            <h3 class="menu-card__name">Nebula Latte</h3>
+            <span class="menu-card__price">$6.50</span>
+            <div class="menu-card__glow"></div>
+          </div>
+          <div class="menu-card__back">
+            <p class="menu-card__desc">A swirling blend of espresso and steamed oat milk with butterfly pea flower, topped with edible stardust.</p>
+            <span class="menu-card__tag">☆ Best Seller</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="drinks">
+        <div class="menu-card__inner">
+          <div class="menu-card__front">
+            <div class="menu-card__icon">🧋</div>
+            <h3 class="menu-card__name">Plasma Boba</h3>
+            <span class="menu-card__price">$7.00</span>
+            <div class="menu-card__glow"></div>
+          </div>
+          <div class="menu-card__back">
+            <p class="menu-card__desc">Glowing cyan tapioca pearls suspended in a taro-matcha fusion with a charge of citrus lightning.</p>
+            <span class="menu-card__tag">⚡ Fan Favorite</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="drinks">
+        <div class="menu-card__inner">
+          <div class="menu-card__front">
+            <div class="menu-card__icon">🍵</div>
+            <h3 class="menu-card__name">Quantum Matcha</h3>
+            <span class="menu-card__price">$5.75</span>
+            <div class="menu-card__glow"></div>
+          </div>
+          <div class="menu-card__back">
+            <p class="menu-card__desc">Ceremonial grade matcha whisked into a dimensional foam, served in our signature gravity-defying cup.</p>
+            <span class="menu-card__tag">🍃 Organic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="specials">
+        <div class="menu-card__inner">
+          <div class="menu-card__front">
+            <div class="menu-card__icon">🌌</div>
+            <h3 class="menu-card__name">Void Espresso</h3>
+            <span class="menu-card__price">$8.25</span>
+            <div class="menu-card__glow"></div>
+          </div>
+          <div class="menu-card__back">
+            <p class="menu-card__desc">Triple-shot dark matter espresso infused with activated charcoal and vanilla nebula cream. Not for the faint-hearted.</p>
+            <span class="menu-card__tag">🔥 New</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="food">
+        <div class="menu-card__inner">
+          <div class="menu-card__front">
+            <div class="menu-card__icon">🥐</div>
+            <h3 class="menu-card__name">Meteor Croissant</h3>
+            <span class="menu-card__price">$4.50</span>
+            <div class="menu-card__glow"></div>
+          </div>
+          <div class="menu-card__back">
+            <p class="menu-card__desc">Flaky, buttery layers with a molten chocolate core that erupts on first bite. Served warm from our orbital oven.</p>
+            <span class="menu-card__tag">🧈 Fresh Daily</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="food">
+        <div class="menu-card__inner">
+          <div class="menu-card__front">
+            <div class="menu-card__icon">🍰</div>
+            <h3 class="menu-card__name">Stardust Cake</h3>
+            <span class="menu-card__price">$6.00</span>
+            <div class="menu-card__glow"></div>
+          </div>
+          <div class="menu-card__back">
+            <p class="menu-card__desc">Levitating layers of lavender sponge, cosmic berry compote, and prismatic mirror glaze that shifts color as you eat.</p>
+            <span class="menu-card__tag">✨ Chef's Pick</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="drinks">
+        <div class="menu-card__inner">
+          <div class="menu-card__front">
+            <div class="menu-card__icon">🫧</div>
+            <h3 class="menu-card__name">Aurora Fizz</h3>
+            <span class="menu-card__price">$5.25</span>
+            <div class="menu-card__glow"></div>
+          </div>
+          <div class="menu-card__back">
+            <p class="menu-card__desc">A sparkling mocktail of passion fruit, elderflower, and color-changing pH-reactive syrups. Mesmerizing to watch.</p>
+            <span class="menu-card__tag">🌈 Alcohol-Free</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="specials">
+        <div class="menu-card__inner">
+          <div class="menu-card__front">
+            <div class="menu-card__icon">🍩</div>
+            <h3 class="menu-card__name">Black Hole Donut</h3>
+            <span class="menu-card__price">$5.00</span>
+            <div class="menu-card__glow"></div>
+          </div>
+          <div class="menu-card__back">
+            <p class="menu-card__desc">Charcoal-infused ring donut with a swirling gravitational pull of salted caramel, coated in shimmering ube glaze.</p>
+            <span class="menu-card__tag">🔥 Limited</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT SECTION ═══════════ -->
+  <section id="about" class="section about-section">
+    <div class="section-header">
+      <span class="section-tag">// MISSION LOG</span>
+      <h2 class="section-title neon-text">About Us</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-image-col">
+        <div class="about-image-frame">
+          <img src="assets/hamsta-about.png" alt="Hamsta barista crafting cosmic beverages" class="about-image" />
+          <div class="about-image-scanline"></div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-pod">
+            <span class="stat-number" data-target="2049">0</span>
+            <span class="stat-label">EST. Year</span>
+          </div>
+          <div class="stat-pod">
+            <span class="stat-number" data-target="42">0</span>
+            <span class="stat-label">Stations</span>
+          </div>
+          <div class="stat-pod">
+            <span class="stat-number" data-target="9001">0</span>
+            <span class="stat-label">Happy Humans</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text-col">
+        <div class="about-panel">
+          <div class="panel-header">
+            <span class="panel-dot"></span>
+            <span class="panel-dot"></span>
+            <span class="panel-dot"></span>
+            <span class="panel-title">hamsta_origins.log</span>
+          </div>
+          <div class="panel-body">
+            <p>In the year 2049, a rogue colony of hyper-intelligent hamsters hijacked an orbital station's coffee module. What started as a tiny rebellion became the galaxy's most beloved café chain.</p>
+            <p>At <strong>Hamsta Cafe</strong>, every brew is crafted with zero-gravity precision and served with maximum hamster enthusiasm. Our barista bots are trained by the fluffiest crew this side of the Milky Way.</p>
+            <p>We believe great coffee should feel like an event — immersive, sensory, and a little bit wild. Step into our neon-lit pods and let the hamsters fuel your next adventure.</p>
+          </div>
+        </div>
+
+        <div class="about-panel about-panel--values">
+          <h3 class="values-title">Core Protocols</h3>
+          <div class="values-grid">
+            <div class="value-item">
+              <span class="value-icon">🌱</span>
+              <span class="value-name">Sustainable Orbits</span>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">⚗️</span>
+              <span class="value-name">Experimental Brews</span>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">🐹</span>
+              <span class="value-name">Hamster Approved</span>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">💫</span>
+              <span class="value-name">Cosmic Vibes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ GALLERY SECTION ═══════════ -->
+  <section id="gallery" class="section gallery-section">
+    <div class="section-header">
+      <span class="section-tag">// VISUAL FEED</span>
+      <h2 class="section-title neon-text">The Ambience</h2>
+      <p class="section-desc">Step inside our neon-lit pods. Every seat is a window to the cosmos.</p>
+    </div>
+
+    <div class="gallery-track-wrapper">
+      <div class="gallery-track" id="gallery-track">
+        <div class="gallery-item">
+          <div class="gallery-frame">
+            <img src="assets/ambience-1.png" alt="Futuristic cafe interior with neon lighting and holographic displays" class="gallery-img" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Main Deck</span>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-frame">
+            <img src="assets/ambience-2.png" alt="Neon coffee bar counter with glowing drink dispensers" class="gallery-img" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Brew Station</span>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-frame">
+            <img src="assets/ambience-3.png" alt="Cozy booth seating with ambient neon underglow" class="gallery-img" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Lounge Pods</span>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-frame">
+            <img src="assets/ambience-4.png" alt="Futuristic beverages and food with neon glow" class="gallery-img" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Cosmic Menu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-controls">
+        <button class="gallery-btn gallery-btn--prev" id="gallery-prev" aria-label="Previous gallery image">‹</button>
+        <div class="gallery-dots" id="gallery-dots"></div>
+        <button class="gallery-btn gallery-btn--next" id="gallery-next" aria-label="Next gallery image">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FEEDBACK SECTION ═══════════ -->
+  <section id="feedback" class="section feedback-section">
+    <div class="section-header">
+      <span class="section-tag">// CREW FEEDBACK</span>
+      <h2 class="section-title neon-text">Share Your Experience</h2>
+      <p class="section-desc">Loved your visit? Got suggestions? Our hamster crew reads every single message.</p>
+    </div>
+
+    <div class="feedback-container">
+      <form class="reserve-form" id="feedback-form" autocomplete="off">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fb-name" class="form-label">Your Name</label>
+            <div class="input-wrap">
+              <input type="text" id="fb-name" class="form-input" placeholder="What should we call you?" required />
+              <span class="input-glow"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fb-email" class="form-label">Email</label>
+            <div class="input-wrap">
+              <input type="email" id="fb-email" class="form-input" placeholder="your@email.com" required />
+              <span class="input-glow"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-group--full">
+          <label class="form-label">How was your experience?</label>
+          <div class="star-rating" id="star-rating">
+            <button type="button" class="star-btn" data-value="1" aria-label="1 star">★</button>
+            <button type="button" class="star-btn" data-value="2" aria-label="2 stars">★</button>
+            <button type="button" class="star-btn" data-value="3" aria-label="3 stars">★</button>
+            <button type="button" class="star-btn" data-value="4" aria-label="4 stars">★</button>
+            <button type="button" class="star-btn" data-value="5" aria-label="5 stars">★</button>
+          </div>
+          <input type="hidden" id="fb-rating" value="0" />
+        </div>
+
+        <div class="form-group form-group--full">
+          <label for="fb-message" class="form-label">Your Message</label>
+          <div class="input-wrap">
+            <textarea id="fb-message" class="form-input form-textarea" placeholder="Tell us about your favorite drink, the vibe, or anything we can improve..." rows="4" required></textarea>
+            <span class="input-glow"></span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-holo btn-holo--submit" id="feedback-submit">
+          <span class="btn-holo__text">Send Feedback</span>
+          <span class="btn-holo__glow"></span>
+        </button>
+
+        <div class="form-success" id="feedback-success">
+          <div class="success-icon">🐹💬</div>
+          <h3>Thanks for sharing!</h3>
+          <p>Our hamster crew appreciates your feedback. It helps us brew better every day!</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">🐹 HAMSTA<span class="logo-accent">CAFE</span></span>
+        <p class="footer-tagline">A hamster-run space station café.</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Twitter / X" title="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Discord" title="Discord">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561 19.9312 19.9312 0 005.9932 3.0356.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057 13.1073 13.1073 0 01-1.872-.8923.0766.0766 0 01-.0076-.127 10.2029 10.2029 0 00.3722-.2917.074.074 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.074.074 0 01.0785.0095c.1202.099.246.1981.3732.2927a.0765.0765 0 01-.0066.1276 12.2986 12.2986 0 01-1.8730.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286 19.8975 19.8975 0 006.0023-3.0356.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286z"/><ellipse cx="8.5" cy="14" rx="1.5" ry="1.5"/><ellipse cx="15.5" cy="14" rx="1.5" ry="1.5"/></svg>
+        </a>
+      </div>
+
+      <div class="footer-qr">
+        <div class="qr-frame">
+          <img src="assets/qr-code.png" alt="Scan to visit Hamsta Cafe" class="qr-image" />
+        </div>
+        <span class="qr-label">Scan to visit us</span>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2049 Hamsta Cafe — All systems operational.</p>
+        <p class="footer-credits">Designed with 🐹 and ☕ aboard Station Hamsta-7</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
